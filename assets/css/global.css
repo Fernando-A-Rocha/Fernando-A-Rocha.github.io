@@ -1,5 +1,12 @@
 /* Global site Stylesheet */
-
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: black;
+}
+::selection {
+    color: white;
+    background: black;
+}
 body {
     margin: 0;
     padding: 0;
@@ -58,7 +65,7 @@ p {
     text-decoration: none;
 }
 .linkedin-icon {
-    margin-left: 0.25em;
+    margin-left: 0.5em;
     color: #fff;
     font-size: 4em;
     text-decoration: none;
