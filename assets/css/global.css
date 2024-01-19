@@ -87,10 +87,10 @@ p {
     margin-right: 10px;
     color: #fff;
 }
-.email-link {
+.normal-link {
     color: #bbb;
     text-decoration: none;
 }
-.email-link:hover {
+.normal-link:hover {
     color: #fff;
 }
