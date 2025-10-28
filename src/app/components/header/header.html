@@ -1,0 +1,21 @@
+<header>
+  <nav>
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
+    </ul>
+    <button
+      class="theme-toggle"
+      (click)="themeService.toggleTheme()"
+      [attr.aria-label]="
+        'Switch to ' + (themeService.themeClass() === 'dark' ? 'light' : 'dark') + ' mode'
+      "
+    >
+      <i class="fas" [ngClass]="themeService.themeIcon()"></i>
+    </button>
+  </nav>
+</header>

@@ -1,0 +1,21 @@
+<div class="project">
+  <div class="container">
+    <div class="project-header">
+      <a routerLink="/portfolio" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+      </a>
+    </div>
+
+    <div class="project-content">
+      @if (isLoading()) {
+      <div class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading project content...</p>
+      </div>
+      } @else {
+      <div class="markdown-content" [innerHTML]="projectContent()"></div>
+      }
+    </div>
+  </div>
+</div>

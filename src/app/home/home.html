@@ -1,0 +1,33 @@
+<div class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ name() }}</h1>
+      <div class="summary">
+        @for (paragraph of summaryParagraphs(); track $index) {
+        <p>{{ paragraph }}</p>
+        }
+      </div>
+      <div class="call-to-action">
+        <p>{{ callToAction() }}</p>
+      </div>
+      <div class="contact">
+        <a href="mailto:{{ email() }}" class="email-link">
+          <i class="fas fa-envelope"></i>
+          {{ email() }}
+        </a>
+      </div>
+      <div class="social-links">
+        @for (link of socialLinks(); track link.name) {
+        <a
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.name"
+        >
+          <i [ngClass]="link.icon"></i>
+        </a>
+        }
+      </div>
+    </div>
+  </div>
+</div>

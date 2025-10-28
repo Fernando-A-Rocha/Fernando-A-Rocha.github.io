@@ -1,0 +1,39 @@
+<div class="portfolio">
+  <div class="container">
+    <div class="portfolio-header">
+      <h1>Portfolio</h1>
+      @if(projects().length > 0) {
+      <p>A collection of projects showcasing my development skills and experience.</p>
+      } @else {
+      <p>
+        My projects are currently listed on
+        <a href="https://linkedin.com/in/fernandorocha51">my LinkedIn page</a>, please check them
+        out there! Thank you :-)
+      </p>
+      }
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects(); track project.id) {
+      <article class="project-card">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title" />
+        </div>
+        <div class="project-content">
+          <h3>{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-technologies">
+            @for (tech of project.technologies; track tech) {
+            <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+          <div class="project-footer">
+            <span class="project-date">{{ project.date | date : 'MMM yyyy' }}</span>
+            <a [routerLink]="project.url" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+  </div>
+</div>
