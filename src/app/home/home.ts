@@ -12,7 +12,7 @@ export class Home implements OnInit {
   name = signal('Fernando Rocha');
   email = signal('hello@frocha.net');
 
-  private summaryText = signal(`👋 Olá, I'm Fernando, a software engineer and developer based in Porto.
+  private summaryText = signal(`👋 Olá! I'm Fernando, a software engineer and developer based in Porto.
 I'm fluent in Portuguese, French, and English.
 
 I have experience developing full stack web applications and integrating them with external services and APIs, always focusing on clean architecture, performance, and scalability.
@@ -25,7 +25,7 @@ I'm constantly learning and experimenting, whether it's mastering a new framewor
     return this.summaryText().split('\n\n').filter(paragraph => paragraph.trim().length > 0);
   });
 
-  callToAction = signal('Feel free to reach out to me');
+  callToAction = signal('Feel free to reach out to me!');
 
   socialLinks = signal([
     {

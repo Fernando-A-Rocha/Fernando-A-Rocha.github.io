@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  padding: 2rem 0;
+  padding: 3rem 0;
   max-width: 100%;
   overflow-x: hidden; // Prevent horizontal overflow
 }
@@ -30,59 +30,57 @@ h1 {
 .summary {
   font-size: 1.25rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  text-align: justify;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
-
-  // Multi-column layout for large screens
-  @media (min-width: 1200px) {
-    column-count: 2;
-    column-gap: 3rem;
-    column-rule: 1px solid var(--border-color);
-    column-rule-style: dotted;
-  }
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 
   p {
-    margin-bottom: 1rem;
-    break-inside: avoid; // Prevent paragraphs from breaking across columns
+    margin-bottom: 1.5rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    text-align: left;
 
     &:last-child {
       margin-bottom: 0;
     }
 
-    // Different blue shades for each paragraph
+    // Consistent color scheme with subtle variations
     &:nth-child(1) {
-      color: var(--accent-color);
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 1.3rem;
     }
 
     &:nth-child(2) {
-      color: #4a90e2; // Lighter blue
+      color: var(--text-secondary);
     }
 
     &:nth-child(3) {
-      color: #7bb3f0; // Even lighter blue
+      color: var(--text-secondary);
     }
 
     &:nth-child(4) {
-      color: #a8d0f0; // Lightest blue
+      color: var(--text-secondary);
     }
 
     &:nth-child(5) {
-      color: #c4e0f5; // Very light blue
+      color: var(--text-secondary);
     }
   }
 }
 
 .call-to-action {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-primary);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-weight: 500;
   font-style: italic;
+  opacity: 0.9;
 }
 
 .contact {
@@ -154,7 +152,8 @@ h1 {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 1rem 0;
+    padding: 2rem 0;
+    min-height: calc(100vh - 60px);
   }
 
   .hero-content {
@@ -163,15 +162,26 @@ h1 {
 
   h1 {
     font-size: 2.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .summary {
     font-size: 1.1rem;
-    text-align: left; // Disable justify on mobile
+    margin-bottom: 2rem;
+    max-width: 100%;
+
+    p {
+      margin-bottom: 1.25rem;
+
+      &:nth-child(1) {
+        font-size: 1.2rem;
+      }
+    }
   }
 
   .call-to-action {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 
   .social-links {
