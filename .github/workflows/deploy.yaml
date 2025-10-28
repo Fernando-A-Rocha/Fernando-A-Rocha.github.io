@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ./dist/personal-site-ng
+          path: ./dist/personal-site-ng/browser/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
